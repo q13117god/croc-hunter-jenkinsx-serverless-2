@@ -2,12 +2,12 @@
 dependencies:
 - alias: expose
   name: exposecontroller
-  repository: http://chartmuseum.jenkins-x.io
+  repository: https://chartmuseum.build.cd.jenkins-x.io
   version: 2.3.56
 - alias: cleanup
   name: exposecontroller
-  repository: http://chartmuseum.jenkins-x.io
+  repository: https://chartmuseum.build.cd.jenkins-x.io
   version: 2.3.56
 - alias: preview
-  name: croc-hunter-jenkinsx-serverless-2
-  repository: file://../croc-hunter-jenkinsx-serverless-2
+  name: croc-hunter-jenkinsx
+  repository: file://../croc-hunter-jenkinsx
