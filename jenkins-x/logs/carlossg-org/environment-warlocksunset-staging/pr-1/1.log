@@ -1,0 +1,14 @@
+Step: build-step-credential-initializer:
+
+{"level":"warn","ts":1547136028.7131908,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/test\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1547136028.7136705,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: build-step-git-source-0:
+
+{"level":"warn","ts":1547136030.7827406,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/test\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1547136032.7153246,"logger":"fallback-logger","caller":"git-init/main.go:92","msg":"Successfully cloned \"https://github.com/carlossg-org/environment-warlocksunset-staging.git\" @ \"a9b95195696bddf8f9c83d37159c6aac88391a5e\" in path \"/workspace\""}
+Step: build-step-build:
+
+Adding missing Helm repo: jenkins-x http://chartmuseum.jenkins-x.io
+Successfully added Helm repository jenkins-x.
+Adding missing Helm repo: releases http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository releases.
