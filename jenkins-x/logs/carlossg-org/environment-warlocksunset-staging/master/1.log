@@ -1,11 +1,11 @@
 Step: build-step-credential-initializer:
 
-{"level":"warn","ts":1547136100.329468,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/test\" is not a valid GitHub commit ID"}
-{"level":"info","ts":1547136100.3322363,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+{"level":"warn","ts":1547217334.601493,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/test\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1547217334.6021507,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
 Step: build-step-git-source-0:
 
-{"level":"warn","ts":1547136102.2494998,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/test\" is not a valid GitHub commit ID"}
-{"level":"info","ts":1547136103.0901773,"logger":"fallback-logger","caller":"git-init/main.go:92","msg":"Successfully cloned \"https://github.com/carlossg-org/environment-warlocksunset-staging.git\" @ \"f605035ef5dc0b754ac0b1333347d0d5284353fa\" in path \"/workspace\""}
+{"level":"warn","ts":1547217335.7962265,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/test\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1547217337.1484609,"logger":"fallback-logger","caller":"git-init/main.go:92","msg":"Successfully cloned \"https://github.com/carlossg-org/environment-warlocksunset-staging.git\" @ \"fa3b0892e822e7d7a256214932dd5e97fbc03057\" in path \"/workspace\""}
 Step: build-step-apply:
 
 Modified file /workspace/env/Chart.yaml to set the chart to version 1
@@ -15,5 +15,4 @@ Adding missing Helm repo: releases http://jenkins-x-chartmuseum:8080
 Successfully added Helm repository releases.
 Applying helm chart at . as release name jx-staging to namespace jx-staging
 Using values files: values.yaml
-error: upgrading helm chart '.': failed to run 'helm upgrade --namespace jx-staging --install --wait --force --timeout 600 --values values.yaml jx-staging .' command in directory '.', output: 'Release "jx-staging" does not exist. Installing it now.
-Error: timed out waiting for the condition': exit status 1
+error: upgrading helm chart '.': failed to run 'helm upgrade --namespace jx-staging --install --wait --force --timeout 600 --values values.yaml jx-staging .' command in directory '.', output: 'Error: UPGRADE FAILED: a released named jx-staging is in use, cannot re-use a name that is still in use': exit status 1
