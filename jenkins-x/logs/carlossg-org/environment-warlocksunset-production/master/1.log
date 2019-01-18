@@ -1,11 +1,11 @@
 Step: build-step-credential-initializer:
 
-{"level":"warn","ts":1547136811.1631896,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/test\" is not a valid GitHub commit ID"}
-{"level":"info","ts":1547136811.175635,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+{"level":"warn","ts":1547835116.4204051,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/test\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1547835116.4216216,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
 Step: build-step-git-source-0:
 
-{"level":"warn","ts":1547136813.50572,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/test\" is not a valid GitHub commit ID"}
-{"level":"info","ts":1547136814.201897,"logger":"fallback-logger","caller":"git-init/main.go:92","msg":"Successfully cloned \"https://github.com/carlossg-org/environment-warlocksunset-production.git\" @ \"fb52bc4fd871e39add2cfd1bd52ff81aa91805aa\" in path \"/workspace\""}
+{"level":"warn","ts":1547835117.7118936,"logger":"fallback-logger","caller":"logging/config.go:65","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/test\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1547835118.0756571,"logger":"fallback-logger","caller":"git-init/main.go:92","msg":"Successfully cloned \"https://github.com/carlossg-org/environment-warlocksunset-production.git\" @ \"4adecb25cc49c33ee50a0e36813815c0fe7ef7cc\" in path \"/workspace\""}
 Step: build-step-apply:
 
 Modified file /workspace/env/Chart.yaml to set the chart to version 1
@@ -15,5 +15,3 @@ Adding missing Helm repo: releases http://jenkins-x-chartmuseum:8080
 Successfully added Helm repository releases.
 Applying helm chart at . as release name jx-production to namespace jx-production
 Using values files: values.yaml
-error: upgrading helm chart '.': failed to run 'helm upgrade --namespace jx-production --install --wait --force --timeout 600 --values values.yaml jx-production .' command in directory '.', output: 'Release "jx-production" does not exist. Installing it now.
-Error: timed out waiting for the condition': exit status 1
