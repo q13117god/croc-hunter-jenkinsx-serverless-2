@@ -12,5 +12,4 @@ Successfully added Helm repository releases.
 Applying helm chart at . as release name jx-staging to namespace jx-staging
 no Vault found and no file 'secrets.yaml' exists in directory '.'
 Using values files: values.yaml
-error: upgrading helm chart '.': failed to run 'helm upgrade --namespace jx-staging --install --wait --force --timeout 600 --values values.yaml jx-staging .' command in directory '.', output: 'Release "jx-staging" does not exist. Installing it now.
-Error: timed out waiting for the condition': exit status 1
+error: upgrading helm chart '.': failed to run 'helm upgrade --namespace jx-staging --install --wait --force --timeout 600 --values values.yaml jx-staging .' command in directory '.', output: 'Error: UPGRADE FAILED: services "croc-hunter-jenkinsx" not found': exit status 1
