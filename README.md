@@ -6,6 +6,13 @@ For those that have dreamt to hunt crocs
 
 Basic go webserver to demonstrate example CI/CD pipeline using Kubernetes
 
+## Injecting Delays and Errors
+
+Making requests to these urls will cause the app to delay the response or to respond with an error, and can be useful to simulate real life errors.
+
+    /delay?wait=5
+    /status?code=500
+
 # Deploy using JenkinsX (Kubernetes, Helm, Monocular, ChartMuseum)
 
 Just follow the [JenkinsX](http://jenkins-x.io) installation with `--prow=true`
@@ -16,7 +23,7 @@ For example, if using GKE with cert-manager preinstalled for https certificates
 
 Then fork this repo and [import it](http://jenkins-x.io/developing/import/)
 
-    jx import --url https://github.com/GITHUB_USER/croc-hunter-jenkinsx-serverless
+    jx import --url https://github.com/GITHUB_USER/croc-hunter-jenkinsx-serverless --no-draft --pack=go
 
 Then, any PRs against this repo will be automatically deployed to preview environments.
 When they are merged they will be deployed to the `staging` environment.
