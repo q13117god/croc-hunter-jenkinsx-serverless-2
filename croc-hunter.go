@@ -44,20 +44,20 @@ func main() {
 		req.Header.Set("Metadata-Flavor", "Google")
 		resp, err := http.DefaultClient.Do(req)
 		if err != nil {
-			log.Fatalf("could not get region: %s", err)
+			log.Printf("could not get region: %s", err)
 		}
 		if resp.StatusCode < 200 || resp.StatusCode >= 300 {
-			log.Fatalf("could not get region: %s", http.StatusText(resp.StatusCode))
+			log.Printf("could not get region: %s", http.StatusText(resp.StatusCode))
 		}
 		body, err := ioutil.ReadAll(resp.Body)
 		resp.Body.Close()
 		if err != nil {
-			log.Fatalf("could not read region response: %s", err)
+			log.Printf("could not read region response: %s", err)
 		} else {
 			region = string(body)
 		}
 	} else {
-		log.Fatalf("could not build region request: %s", err)
+		log.Printf("could not build region request: %s", err)
 	}
 	log.Printf("region: %s", region)
 
@@ -86,7 +86,7 @@ const (
 				<canvas id="canvasEnemy" width="800" height="500" ></canvas>
 				<canvas id="canvasJet" width="800" height="500" ></canvas>
 				<canvas id="canvasHud" width="800" height="500" ></canvas>
-				<script src='/static/game2.js'></script>
+				<script src='/static/game.js'></script>
 				<div class="details">
 				<strong>Hostname: </strong><span id="hostname">%s</span><br>
 				<strong>Region: </strong><span id="region">%s</span><br>
@@ -126,7 +126,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	hostname, err := os.Hostname()
 	if err != nil {
-		log.Fatalf("could not get hostname: %s", err)
+		log.Printf("could not get hostname: %s", err)
 	}
 
 	fmt.Fprintf(w, html, hostname, region, release, commit, powered)

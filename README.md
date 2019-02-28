@@ -6,13 +6,6 @@ For those that have dreamt to hunt crocs
 
 Basic go webserver to demonstrate example CI/CD pipeline using Kubernetes
 
-## Injecting Delays and Errors
-
-Making requests to these urls will cause the app to delay the response or to respond with an error, and can be useful to simulate real life errors.
-
-    /delay?wait=5
-    /status?code=500
-
 # Deploy using JenkinsX (Kubernetes, Helm, Monocular, ChartMuseum)
 
 Just follow the [JenkinsX](http://jenkins-x.io) installation with `--prow=true`
@@ -27,6 +20,18 @@ Then fork this repo and [import it](http://jenkins-x.io/developing/import/)
 
 Then, any PRs against this repo will be automatically deployed to preview environments.
 When they are merged they will be deployed to the `staging` environment.
+
+To tail all the build logs
+
+    kail -l build.knative.dev/buildName --since=5m
+
+Or in [GKE StackDriver logs](https://console.cloud.google.com/logs/viewer?authuser=1&advancedFilter=resource.type%3D%22container%22%0Aresource.labels.cluster_name%3D%22samurainarrow%22%0Aresource.labels.container_name%3Dbuild-step-jenkins)
+
+```
+resource.type="container"
+resource.labels.cluster_name="samurainarrow"
+resource.labels.container_name="build-step-jenkins"
+```
 
 To [promote from staging to production](http://jenkins-x.io/developing/promote/) just run
 
